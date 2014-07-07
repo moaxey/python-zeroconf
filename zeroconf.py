@@ -512,10 +512,10 @@ class DNSIncoming(object):
                     next = off + 1
                 off = ((length & 0x3F) << 8) | ord(self.data[off])
                 if off >= first:
-                    raise "Bad domain name (circular) at " + str(off)
+                    raise Exception, "Bad domain name (circular) at " + str(off)
                 first = off
             else:
-                raise "Bad domain name at " + str(off)
+                raise Exception, "Bad domain name at " + str(off)
 
         if next >= 0:
             self.offset = next
@@ -822,7 +822,7 @@ class Listener(object):
             if e[0] == socket.EBADF:
                 return
             else:
-                raise e
+                raise
         self.data = data
         msg = DNSIncoming(data)
         if msg.isQuery():
