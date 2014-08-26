@@ -17,7 +17,7 @@ zeroconf = Zeroconf()
 print("Registration of a service...")
 zeroconf.registerService(info)
 try:
-    raw_input("Waiting (press Enter to exit)...")
+    input("Waiting (press Enter to exit)...")
 finally:
     print("Unregistering...")
     zeroconf.unregisterService(info)

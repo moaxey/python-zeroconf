@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-from __future__ import absolute_import, division, print_function, unicode_literals
+
 
 """ Example of browsing for a service (in this case, HTTP) """
 
@@ -27,7 +27,7 @@ class MyListener(object):
             prop = info.getProperties()
             if prop:
                 print("  Properties are")
-                for key, value in prop.items():
+                for key, value in list(prop.items()):
                     print("    %s: %s" % (key, value))
         else:
             print("  No info")
@@ -39,6 +39,6 @@ if __name__ == '__main__':
     listener = MyListener()
     browser = ServiceBrowser(zeroconf, "_http._tcp.local.", listener)
     try:
-        raw_input("Waiting (press Enter to exit)...\n\n")
+        input("Waiting (press Enter to exit)...\n\n")
     finally:
         zeroconf.close()

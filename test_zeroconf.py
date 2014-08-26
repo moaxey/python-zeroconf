@@ -84,7 +84,7 @@ class PacketForm(unittest.TestCase):
     def testNumbersQuestions(self):
         generated = r.DNSOutgoing(r._FLAGS_QR_RESPONSE)
         question = r.DNSQuestion("testname.local.", r._TYPE_SRV, r._CLASS_IN)
-        for i in xrange(10):
+        for i in range(10):
             generated.addQuestion(question)
         bytes = generated.packet()
         (numQuestions, numAnswers, numAuthorities,
