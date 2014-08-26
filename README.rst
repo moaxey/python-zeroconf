@@ -1,6 +1,9 @@
 python-zeroconf
 ===============
 
+This fork has been quickly updated for python3 compatability by running
+the 2to3 tool from python 3.4.1 and by just a handful of other changes.
+
 .. image:: https://travis-ci.org/jstasiak/python-zeroconf.svg?branch=master
     :target: https://travis-ci.org/jstasiak/python-zeroconf
     
