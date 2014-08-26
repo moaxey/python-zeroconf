@@ -1221,9 +1221,9 @@ class ServiceInfo(object):
             result += "None"
         else:
             if len(self.text) < 20:
-                result += self.text
+                result += self.text.decode("utf-8")
             else:
-                result += self.text[:17] + "..."
+                result += self.text[:17].decode("utf-8") + "..."
         result += "]"
         return result
 
