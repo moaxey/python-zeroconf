@@ -564,11 +564,11 @@ class DNSIncoming(object):
                 off = ((length & 0x3F) << 8) | byte_ord(self.data[off])
                 if off >= first:
                     # TODO raise more specific exception
-                    raise Exception, "Bad domain name (circular) at %s" % (str(off),)
+                    raise Exception("Bad domain name (circular) at %s" % (str(off),))
                 first = off
             else:
                 # TODO raise more specific exception
-                raise Exception, "Bad domain name at %s" % (str(off),)
+                raise Exception("Bad domain name at %s" % (str(off),))
         if next >= 0:
             self.offset = next
         else:
